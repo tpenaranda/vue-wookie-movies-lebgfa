@@ -33,10 +33,7 @@ let _ = require('lodash');
 
 Vue.prototype.$parseMovies = function (movies) {
     this.$root.movies = movies
-    let genres = _.uniq(_.flatten(_.map(movies, (i) => i.genres)))
-    this.$root.genres = genres
-
-    return {movies, genres}
+    this.$root.genres = _.uniq(_.flatten(_.map(movies, (i) => i.genres)))
 }
 
 axios.get('https://wookie.codesubmit.io/movies').then((response) => {
