@@ -29,11 +29,25 @@ const router = new VueRouter({
   routes
 })
 
-axios.get('https://wookie.codesubmit.io/movies?include=genres').then((response) => {
+let _ = require('lodash');
+
+Vue.prototype.$parseMovies = function (movies) {
+    this.$root.movies = movies
+    let genres = window._.uniq(_.flatten(_.map(movies, (i) => i.genres)))
+    this.$root.genres = genres
+
+    return {movies, genres}
+}
+
+axios.get('https://wookie.codesubmit.io/movies').then((response) => {
     new Vue({
         router,
         data: {
-            movies: response.data.movies
+            genres: [],
+            movies: []
+        },
+        created () {
+          this.$root.$parseMovies(response.data.movies)
         },
         render: h => h(App),
     }).$mount('#app')

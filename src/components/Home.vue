@@ -1,8 +1,9 @@
 <template>
   <div class="home">
-    <b-container class="movie-row" fluid>
+    <b-container v-for="genre in $root.genres" v-bind:key="genre" class="movie-row" fluid>
+      <h1 class="text-left pb-0 pt-1">Genre {{ genre }}</h1>
       <b-row class="justify-content-md-center">
-        <b-col md="auto" v-for="movie in $root.movies" v-bind:key="movie.id" class="movie-column">
+        <b-col md="auto" v-for="movie in $root.movies.filter((i) => i.genres.includes(genre))" v-bind:key="movie.id" class="movie-column">
           <b-card
             :title="movie.title"
             :img-src="movie.poster"
@@ -40,11 +41,11 @@ export default {
 <style scoped>
   h1 {
     color: #FFF;
-    padding: 1em;
+    padding: .5em;
   }
   .movie-row {
     width: 100%;
-    padding-top: 6.5em;
+    padding-top: 5em;
   }
   .movie-column {
     padding: 1em;

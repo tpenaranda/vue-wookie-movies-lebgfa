@@ -32,7 +32,7 @@ export default {
       return this.inputTimeout = setTimeout(() => {
         this.searchInProgress = true
         this.axios.get(`https://wookie.codesubmit.io/movies?q=${input.target.value}`).then((response) => {
-          this.$root.movies = response.data.movies
+          this.$root.$parseMovies(response.data.movies)
         }).finally(() => this.searchInProgress = false)
       }, 1000);
     }
