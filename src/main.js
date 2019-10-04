@@ -12,7 +12,7 @@ Vue.config.productionTip = false
 
 Vue.use(BootstrapVue)
 Vue.use(VueRouter)
-
+Vue.use(require('vue-moment'));
 
 axios.defaults.headers.common['Authorization'] = 'Bearer Wookie2019'
 Vue.use(VueAxios, axios)
@@ -29,7 +29,7 @@ const router = new VueRouter({
   routes
 })
 
-axios.get('https://wookie.codesubmit.io/movies').then((response) => {
+axios.get('https://wookie.codesubmit.io/movies?include=genres').then((response) => {
     new Vue({
         router,
         data: {
