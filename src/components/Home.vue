@@ -9,7 +9,7 @@
             :img-alt="movie.slug"
             img-top
             tag="article"
-            style="min-width: 220px; max-width: 320px; height: 100%; padding: .25em; margin: .25em;"
+            style="min-width: 220px; max-width: 320px; height: 100%; padding: .25em; margin: .5em auto auto auto;"
             class="mb-2"
           >
             <b-card-text>
@@ -20,6 +20,7 @@
             </router-link>
           </b-card>
         </b-col>
+        <b-col v-if="!$root.movies.length"><h3 class="text-white pt-5">No movies found.</h3></b-col>
       </b-row>
     </b-container>
   </div>
@@ -43,7 +44,7 @@ export default {
   }
   .movie-row {
     width: 100%;
-    padding-top: 5em;
+    padding-top: 6.5em;
   }
   .movie-column {
     padding: 1em;

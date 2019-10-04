@@ -8,7 +8,7 @@
         <b-col sm="8">
             <p class="text-left p-3 display-4">{{ movie.title }}</p>
 
-            <p class="text-left pl-3 m-0"><i>IMDB Rating:</i> {{ movie.imdb_rating }}</p>
+            <p class="text-left pl-3 pt-2 m-0"><i>IMDB Rating:</i> {{ movie.imdb_rating }}</p>
             <p class="text-left pl-3 m-0"><i>Year:</i> {{ movie.released_on | moment('YYYY') }}</p>
             <p class="text-left pl-3 pb-5 m-0"><i>Classification:</i>  {{ movie.classification }}</p>
 
@@ -17,7 +17,7 @@
       </b-row>
     </b-container>
     <router-link to='/'>
-      <b-button pill variant="warning" class="mt-5">Return to movies</b-button>
+      <b-button pill variant="warning" class="mt-5">Back</b-button>
     </router-link>
   </div>
 </template>
