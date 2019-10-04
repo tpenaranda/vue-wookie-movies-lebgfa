@@ -6,11 +6,33 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <title>Wookie Movies</title>
+    <style>
+      #app {
+        font-family: 'Avenir', Helvetica, Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-align: center;
+      }
+      body {
+        background-color: #000 !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        height: 100vh;
+        margin: 0;
+      }
+      .loading {
+        color: #FFF;
+        font-size: 1.5em;
+      }
+    </style>
   </head>
   <body>
     <noscript>
       <strong>JavaScript required.</strong>
     </noscript>
-    <div id="app"></div>
+    <div id="app"><span class="loading">Loading...</span></div>
   </body>
 </html>
