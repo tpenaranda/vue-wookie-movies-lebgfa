@@ -33,7 +33,7 @@ let _ = require('lodash');
 
 Vue.prototype.$parseMovies = function (movies) {
     this.$root.movies = movies
-    let genres = window._.uniq(_.flatten(_.map(movies, (i) => i.genres)))
+    let genres = _.uniq(_.flatten(_.map(movies, (i) => i.genres)))
     this.$root.genres = genres
 
     return {movies, genres}
