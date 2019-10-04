@@ -21,7 +21,7 @@ import Home from './components/Home.vue'
 import Detail from './components/Detail.vue'
 
 const routes = [
-  { path: '*', component: Home },
+  { path: '*', component: Home, name: 'home' },
   { path: '/detail/:movie', component: Detail, name: 'detail' }
 ]
 

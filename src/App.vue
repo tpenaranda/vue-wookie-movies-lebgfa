@@ -6,7 +6,7 @@
           <h1 class="">Wookie Movies</h1>
         </b-col>
         <b-col><b-spinner v-if="searchInProgress" class="mb-1" label="Spinning"></b-spinner></b-col>
-        <b-col sm="5" style="vertical-align: middle; display: table;">
+        <b-col v-if="this.$router.currentRoute.name === 'home'" sm="5" style="vertical-align: middle; display: table;">
           <label for="type-text"></label>
           <input @input="searchInput" id="type-text" type="text" class="ml-3" placeholder="Search...">
         </b-col>
